@@ -136,7 +136,7 @@ One integration, unlimited possibilities. As the MCP ecosystem grows, your appli
   "@type": "WebPage",
   "name": "How MCP Works - Model Context Protocol Guide",
   "description": "Master the Model Context Protocol - The universal standard for connecting AI models to external tools and data sources",
-  "url": "https://howmcpworks.com/introduction/",
+  "url": "https://howmcpworks.com/",
   "inLanguage": "en",
   "isPartOf": {
     "@type": "WebSite",

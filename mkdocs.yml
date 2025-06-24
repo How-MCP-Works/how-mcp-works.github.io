@@ -1,7 +1,7 @@
 site_name: How MCP Works
 site_description: Master the Model Context Protocol - A comprehensive guide to building intelligent AI integrations
 site_author: GenSecAI.org
-site_url: https://how-mcp-works.github.io
+site_url: https://howmcpworks.com
 repo_url: https://github.com/how-mcp-works/how-mcp-works.github.io
 repo_name: how-mcp-works/how-mcp-works.github.io
 edit_uri: edit/main/docs/
@@ -29,21 +29,21 @@ theme:
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: black
-      accent: grey
+      primary: deep purple
+      accent: purple
       toggle:
         icon: material/brightness-7
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: black
-      accent: grey
+      primary: deep purple
+      accent: purple
       toggle:
         icon: material/brightness-4
         name: Switch to dark mode
   font:
-    text: Space Mono
-    code: Space Mono
+    text: Inter
+    code: JetBrains Mono
   favicon: assets/favicon.ico
   icon:
     repo: fontawesome/brands/github
@@ -122,7 +122,7 @@ extra:
   generator: false
 
 nav:
-  - Home: introduction.md
+  - Home: index.md
   
   - Concepts:
     - concepts/index.md

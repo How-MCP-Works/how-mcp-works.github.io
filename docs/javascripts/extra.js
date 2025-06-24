@@ -1,3 +1,5 @@
+// Professional MCP Documentation JavaScript
+
 // GitHub stars fetcher for header button
 async function fetchGitHubStars() {
   try {
@@ -18,146 +20,13 @@ async function fetchGitHubStars() {
   }
 }
 
-// Theme persistence
+// Theme persistence and initialization
 function initializeTheme() {
   const savedTheme = localStorage.getItem('theme') || 'dark';
   document.documentElement.setAttribute('data-md-color-scheme', savedTheme === 'dark' ? 'slate' : 'default');
 }
 
-// Interactive code runner for code examples
-function initializeCodeRunners() {
-  const codeBlocks = document.querySelectorAll('.language-python, .language-javascript, .language-typescript, .language-bash');
-  
-  codeBlocks.forEach(block => {
-    if (block.closest('.highlight').querySelector('.run-button')) return;
-    
-    const wrapper = document.createElement('div');
-    wrapper.className = 'interactive-example';
-    block.closest('.highlight').parentNode.insertBefore(wrapper, block.closest('.highlight'));
-    wrapper.appendChild(block.closest('.highlight'));
-    
-    const runButton = document.createElement('button');
-    runButton.className = 'run-button';
-    runButton.textContent = 'Run ▶';
-    runButton.onclick = () => runCode(block);
-    wrapper.appendChild(runButton);
-  });
-}
-
-// Simulated code execution for demo purposes
-async function runCode(codeBlock) {
-  const code = codeBlock.textContent;
-  const language = codeBlock.className.match(/language-(\w+)/)?.[1] || 'text';
-  
-  // Show loading state
-  const button = codeBlock.closest('.interactive-example').querySelector('.run-button');
-  const originalText = button.textContent;
-  button.textContent = 'Running...';
-  button.disabled = true;
-  
-  // Simulate execution delay
-  await new Promise(resolve => setTimeout(resolve, 1500));
-  
-  // Create output area
-  let output = codeBlock.closest('.interactive-example').querySelector('.code-output');
-  if (!output) {
-    output = document.createElement('div');
-    output.className = 'code-output';
-    output.style.cssText = `
-      margin-top: 1rem; 
-      padding: 1rem; 
-      background: #1e1e1e; 
-      color: #f8f8f2;
-      border-radius: 4px; 
-      font-family: "Space Mono", monospace; 
-      font-size: 0.85rem;
-      border: 1px solid #333;
-    `;
-    codeBlock.closest('.interactive-example').appendChild(output);
-  }
-  
-  // Generate appropriate output based on code content and language
-  let result = '';
-  
-  if (code.includes('hello') || code.includes('Hello')) {
-    result = '> Hello from MCP!\n> Connection established successfully.';
-  } else if (code.includes('list_tools')) {
-    result = '> Available tools:\n  - calculator\n  - file_reader\n  - web_search\n  - database_query';
-  } else if (code.includes('mcp-server') || code.includes('mkdocs')) {
-    result = '> Server started successfully\n> Listening on http://localhost:8000\n> Ready to accept connections';
-  } else if (code.includes('git') && code.includes('push')) {
-    result = '> Enumerating objects: 42, done.\n> Counting objects: 100% (42/42), done.\n> To github.com:how-mcp-works/how-mcp-works.github.io.git\n> main -> main';
-  } else if (language === 'bash' || language === 'shell') {
-    result = '> Command executed successfully\n> Exit code: 0';
-  } else if (language === 'python') {
-    result = '> Python 3.11.0\n> Code executed successfully\n> [Simulated output]';
-  } else {
-    result = '> Code executed successfully!\n> [Simulated output for demonstration]';
-  }
-  
-  output.textContent = result;
-  
-  // Reset button
-  button.textContent = originalText;
-  button.disabled = false;
-}
-
-// Mobile navigation toggle
-function initializeMobileNav() {
-  const navToggle = document.createElement('button');
-  navToggle.className = 'md-nav-toggle';
-  navToggle.innerHTML = '☰';
-  navToggle.style.cssText = `
-    display: none;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1001;
-    background: var(--md-accent-fg-color);
-    color: var(--md-default-bg-color);
-    border: none;
-    padding: 0.5rem;
-    border-radius: 4px;
-    font-size: 1.2rem;
-    cursor: pointer;
-  `;
-  
-  document.body.appendChild(navToggle);
-  
-  navToggle.addEventListener('click', () => {
-    const nav = document.querySelector('.md-nav--primary');
-    if (nav) {
-      nav.classList.toggle('md-nav--open');
-    }
-  });
-  
-  // Show toggle on mobile
-  const mediaQuery = window.matchMedia('(max-width: 768px)');
-  const handleMediaQuery = (e) => {
-    navToggle.style.display = e.matches ? 'block' : 'none';
-  };
-  
-  mediaQuery.addListener(handleMediaQuery);
-  handleMediaQuery(mediaQuery);
-}
-
-// Smooth scrolling for anchor links
-function initializeSmoothScrolling() {
-  document.addEventListener('click', function(e) {
-    if (e.target.tagName === 'A' && e.target.getAttribute('href')?.startsWith('#')) {
-      e.preventDefault();
-      const target = document.querySelector(e.target.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    }
-  });
-}
-
-// Copy code button functionality
+// Enhanced copy code button functionality
 function initializeCodeCopy() {
   document.querySelectorAll('.highlight').forEach(block => {
     if (block.querySelector('.copy-button')) return;
@@ -165,19 +34,7 @@ function initializeCodeCopy() {
     const copyButton = document.createElement('button');
     copyButton.className = 'copy-button';
     copyButton.textContent = 'Copy';
-    copyButton.style.cssText = `
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      background: var(--md-accent-fg-color);
-      color: var(--md-default-bg-color);
-      border: none;
-      padding: 0.3rem 0.6rem;
-      border-radius: 3px;
-      font-size: 0.75rem;
-      cursor: pointer;
-      font-family: "Space Mono", monospace;
-    `;
+    copyButton.setAttribute('aria-label', 'Copy code to clipboard');
     
     block.style.position = 'relative';
     block.appendChild(copyButton);
@@ -187,8 +44,10 @@ function initializeCodeCopy() {
       try {
         await navigator.clipboard.writeText(code);
         copyButton.textContent = 'Copied!';
+        copyButton.style.background = 'var(--mcp-primary-light)';
         setTimeout(() => {
           copyButton.textContent = 'Copy';
+          copyButton.style.background = 'var(--mcp-primary)';
         }, 2000);
       } catch (err) {
         console.error('Failed to copy code:', err);
@@ -201,20 +60,273 @@ function initializeCodeCopy() {
   });
 }
 
+// Smooth scrolling for anchor links
+function initializeSmoothScrolling() {
+  document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.getAttribute('href')?.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(e.target.getAttribute('href'));
+      if (target) {
+        const headerHeight = document.querySelector('.md-header')?.offsetHeight || 60;
+        const targetPosition = target.offsetTop - headerHeight - 20;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  });
+}
+
+// Responsive navigation toggle for mobile
+function initializeMobileNav() {
+  // Create mobile menu toggle button
+  const navToggle = document.createElement('button');
+  navToggle.className = 'md-nav-toggle';
+  navToggle.innerHTML = `
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+    </svg>
+  `;
+  navToggle.style.cssText = `
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+    background: var(--mcp-primary);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: var(--mcp-radius);
+    cursor: pointer;
+    box-shadow: var(--mcp-shadow-lg);
+    transition: all 0.2s ease;
+  `;
+  
+  document.body.appendChild(navToggle);
+  
+  navToggle.addEventListener('click', () => {
+    const nav = document.querySelector('.md-nav--primary');
+    if (nav) {
+      nav.classList.toggle('md-nav--open');
+      navToggle.style.background = nav.classList.contains('md-nav--open') 
+        ? 'var(--mcp-primary-dark)' 
+        : 'var(--mcp-primary)';
+    }
+  });
+  
+  // Show/hide toggle based on screen size
+  const mediaQuery = window.matchMedia('(max-width: 768px)');
+  const handleMediaQuery = (e) => {
+    navToggle.style.display = e.matches ? 'block' : 'none';
+    if (!e.matches) {
+      const nav = document.querySelector('.md-nav--primary');
+      if (nav) {
+        nav.classList.remove('md-nav--open');
+      }
+    }
+  };
+  
+  mediaQuery.addEventListener('change', handleMediaQuery);
+  handleMediaQuery(mediaQuery);
+}
+
+// Enhanced search functionality
+function initializeSearch() {
+  const searchInput = document.querySelector('input[data-md-component="search-query"]');
+  if (searchInput) {
+    searchInput.setAttribute('placeholder', 'Search documentation...');
+    
+    // Add search keyboard shortcut (Ctrl/Cmd + K)
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        searchInput.focus();
+      }
+    });
+  }
+}
+
+// Page scroll progress indicator
+function initializeScrollProgress() {
+  const progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  progressBar.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--mcp-primary);
+    z-index: 1000;
+    transition: width 0.1s ease;
+  `;
+  document.body.appendChild(progressBar);
+  
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = `${Math.min(scrollPercent, 100)}%`;
+  });
+}
+
+// Back to top button
+function initializeBackToTop() {
+  const backToTopButton = document.createElement('button');
+  backToTopButton.className = 'back-to-top';
+  backToTopButton.innerHTML = `
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  `;
+  backToTopButton.style.cssText = `
+    position: fixed;
+    bottom: 6rem;
+    right: var(--mcp-space-6);
+    background: var(--mcp-bg-secondary);
+    border: 1px solid var(--mcp-border);
+    color: var(--mcp-text-primary);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `;
+  
+  document.body.appendChild(backToTopButton);
+  
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopButton.style.opacity = '1';
+      backToTopButton.style.visibility = 'visible';
+    } else {
+      backToTopButton.style.opacity = '0';
+      backToTopButton.style.visibility = 'hidden';
+    }
+  });
+}
+
+// Table of contents highlighting
+function initializeTocHighlight() {
+  const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+  const tocLinks = document.querySelectorAll('.md-nav__link[href^="#"]');
+  
+  if (headings.length === 0 || tocLinks.length === 0) return;
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        if (id) {
+          // Remove active class from all TOC links
+          tocLinks.forEach(link => link.classList.remove('md-nav__link--active'));
+          
+          // Add active class to current TOC link
+          const activeLink = document.querySelector(`.md-nav__link[href="#${id}"]`);
+          if (activeLink) {
+            activeLink.classList.add('md-nav__link--active');
+          }
+        }
+      }
+    });
+  }, {
+    rootMargin: '-20% 0% -35% 0%',
+    threshold: 0
+  });
+  
+  headings.forEach(heading => {
+    if (heading.getAttribute('id')) {
+      observer.observe(heading);
+    }
+  });
+}
+
+// Enhanced code block interactions
+function initializeCodeEnhancements() {
+  document.querySelectorAll('.highlight').forEach(block => {
+    // Add language label
+    const codeElement = block.querySelector('code[class*="language-"]');
+    if (codeElement) {
+      const langClass = Array.from(codeElement.classList).find(cls => cls.startsWith('language-'));
+      if (langClass) {
+        const language = langClass.replace('language-', '');
+        const langLabel = document.createElement('div');
+        langLabel.className = 'code-language';
+        langLabel.textContent = language.toUpperCase();
+        langLabel.style.cssText = `
+          position: absolute;
+          top: var(--mcp-space-2);
+          left: var(--mcp-space-3);
+          background: var(--mcp-bg-secondary);
+          color: var(--mcp-text-muted);
+          padding: var(--mcp-space-1) var(--mcp-space-2);
+          border-radius: var(--mcp-radius-sm);
+          font-size: var(--mcp-text-xs);
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        `;
+        block.style.position = 'relative';
+        block.appendChild(langLabel);
+      }
+    }
+  });
+}
+
+// Performance monitoring
+function initializePerformanceMonitoring() {
+  // Monitor page load performance
+  window.addEventListener('load', () => {
+    if ('performance' in window) {
+      const perfData = performance.getEntriesByType('navigation')[0];
+      const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
+      
+      if (loadTime > 3000) {
+        console.warn('Page load time is slow:', loadTime + 'ms');
+      }
+    }
+  });
+  
+  // Monitor scroll performance
+  let scrolling = false;
+  window.addEventListener('scroll', () => {
+    if (!scrolling) {
+      requestAnimationFrame(() => {
+        scrolling = false;
+      });
+      scrolling = true;
+    }
+  });
+}
+
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   initializeTheme();
   fetchGitHubStars();
-  initializeCodeRunners();
-  initializeMobileNav();
-  initializeSmoothScrolling();
   initializeCodeCopy();
-  
-  // Re-initialize dynamic content on navigation
-  document.addEventListener('DOMContentLoaded', () => {
-    initializeCodeRunners();
-    initializeCodeCopy();
-  });
+  initializeSmoothScrolling();
+  initializeMobileNav();
+  initializeSearch();
+  initializeScrollProgress();
+  initializeBackToTop();
+  initializeTocHighlight();
+  initializeCodeEnhancements();
+  initializePerformanceMonitoring();
 });
 
 // Handle theme toggle persistence
@@ -232,26 +344,50 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Add version selector (placeholder for future use)
-function addVersionSelector() {
-  const header = document.querySelector('.md-header__inner');
-  if (header && !document.querySelector('.version-selector')) {
-    const versionDiv = document.createElement('div');
-    versionDiv.className = 'version-selector';
-    versionDiv.style.cssText = `
-      margin-left: 1rem;
-      margin-right: auto;
-      font-size: 0.85rem;
-      color: var(--md-accent-fg-color);
-    `;
-    versionDiv.textContent = 'v1.0';
-    
-    const title = header.querySelector('.md-header__title');
-    if (title) {
-      title.appendChild(versionDiv);
+// Re-initialize dynamic content on navigation (SPA behavior)
+document.addEventListener('DOMContentLoaded', () => {
+  let lastUrl = location.href;
+  new MutationObserver(() => {
+    const url = location.href;
+    if (url !== lastUrl) {
+      lastUrl = url;
+      // Re-initialize components that might need refresh
+      setTimeout(() => {
+        initializeCodeCopy();
+        initializeCodeEnhancements();
+        initializeTocHighlight();
+      }, 100);
+    }
+  }).observe(document.body, { childList: true, subtree: true });
+});
+
+// Add some utility functions for external use
+window.mcpDocs = {
+  scrollToElement: (selector) => {
+    const element = document.querySelector(selector);
+    if (element) {
+      const headerHeight = document.querySelector('.md-header')?.offsetHeight || 60;
+      const targetPosition = element.offsetTop - headerHeight - 20;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  },
+  
+  toggleTheme: () => {
+    const currentScheme = document.documentElement.getAttribute('data-md-color-scheme');
+    const newScheme = currentScheme === 'slate' ? 'default' : 'slate';
+    document.documentElement.setAttribute('data-md-color-scheme', newScheme);
+  },
+  
+  copyToClipboard: async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (err) {
+      console.error('Failed to copy to clipboard:', err);
+      return false;
     }
   }
-}
-
-// Initialize version selector
-document.addEventListener('DOMContentLoaded', addVersionSelector);
+};
