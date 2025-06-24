@@ -1,8 +1,6 @@
-# Welcome to How MCP Works
-
 <div class="hero-section">
-  <h1>Master the Model Context Protocol (MCP)</h1>
-  <p>The universal standard for AI model integration, tool connectivity, and seamless data source access in artificial intelligence applications</p>
+  <h1>How MCP Works</h1>
+  <p>Master the Model Context Protocol - The universal standard for AI model integration, tool connectivity, and seamless data source access in artificial intelligence applications</p>
   <div style="margin-top: 2rem;">
     <a href="/samples/hello-mcp/" class="md-button md-button--primary" style="margin-right: 1rem;">Quick Start →</a>
     <a href="/concepts/what-is-mcp/" class="md-button">Learn More</a>

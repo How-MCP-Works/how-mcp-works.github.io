@@ -1,12 +1,12 @@
 site_name: How MCP Works
 site_description: Master the Model Context Protocol - A comprehensive guide to building intelligent AI integrations
-site_author: How MCP Works Team
+site_author: GenSecAI.org
 site_url: https://how-mcp-works.github.io
 repo_url: https://github.com/how-mcp-works/how-mcp-works.github.io
 repo_name: how-mcp-works/how-mcp-works.github.io
 edit_uri: edit/main/docs/
 
-copyright: Copyright &copy; 2024 How MCP Works
+copyright: Copyright &copy; 2025 GenSecAI.org
 
 theme:
   name: material
@@ -16,14 +16,9 @@ theme:
     - navigation.instant
     - navigation.instant.prefetch
     - navigation.tracking
-    - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
-    - navigation.path
     - navigation.indexes
-    - navigation.top
-    - navigation.footer
     - toc.follow
     - toc.integrate
     - search.suggest
@@ -31,24 +26,23 @@ theme:
     - content.action.edit
     - content.code.copy
     - content.code.annotate
-    - content.tabs.link
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep purple
-      accent: amber
+      primary: black
+      accent: grey
       toggle:
         icon: material/brightness-7
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: deep purple
-      accent: amber
+      primary: black
+      accent: grey
       toggle:
         icon: material/brightness-4
         name: Switch to dark mode
   font:
-    text: Roboto
+    text: Space Mono
     code: Space Mono
   favicon: assets/favicon.ico
   icon:
@@ -122,16 +116,13 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/How-MCP-Works
       name: How MCP Works on GitHub
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/howmcpworks
-      name: Follow on Twitter
   analytics:
     provider: google
     property: G-L04LK6BDHC
   generator: false
 
 nav:
-  - Introduction: introduction.md
+  - Home: introduction.md
   
   - Concepts:
     - concepts/index.md

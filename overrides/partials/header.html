@@ -1,0 +1,80 @@
+{% import "partials/language.html" as lang with context %}
+
+{% set class = "md-header" %}
+{% if "navigation.tabs.sticky" in features %}
+  {% set class = class ~ " md-header--shadow md-header--lifted" %}
+{% elif "navigation.tabs" not in features %}
+  {% set class = class ~ " md-header--shadow" %}
+{% endif %}
+<header class="{{ class }}" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
+    
+    <!-- Site title on the left -->
+    <a href="{{ config.site_url | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
+      <div class="md-header__title">
+        <div class="md-header__ellipsis">
+          <span class="md-header__topic">
+            {{ config.site_name }}
+          </span>
+          <span class="md-header__version" style="margin-left: 1rem; font-size: 0.8rem; color: var(--md-accent-fg-color);">
+            v1.0
+          </span>
+        </div>
+      </div>
+    </a>
+    
+    <!-- Right side: Search and GitHub -->
+    <div class="md-header__source">
+      <!-- Search -->
+      {% if config.theme.include_search_page %}
+        <div class="md-header__option">
+          <div class="md-select">
+            <button class="md-select__inner" aria-label="{{ lang.t('search.config.lang') }}">
+              <span class="md-select__link">
+                {{ lang.t("search.config.lang") }}
+              </span>
+            </button>
+            <div class="md-select__list">
+              {% for lang in config.theme.language %}
+                <div class="md-select__item">
+                  <a href="#" hreflang="{{ lang }}" class="md-select__link">
+                    {{ languages[lang] }}
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      
+      <!-- Search -->
+      {% if "material/search" in config.plugins %}
+        <label class="md-header__button md-icon" for="__search">
+          {% include ".icons/material/magnify.svg" %}
+        </label>
+        {% include "partials/search.html" %}
+      {% endif %}
+      
+      <!-- Theme toggle -->
+      {% if config.theme.palette %}
+        {% if not config.theme.palette is mapping %}
+          <form class="md-header__option" data-md-component="palette">
+            {% for option in config.theme.palette %}
+              {% set scheme = option.scheme %}
+              <input class="md-option" data-md-color-media="{{ option.media }}" data-md-color-scheme="{{ scheme | replace(' ', '-') }}" data-md-color-primary="{{ option.primary | replace(' ', '-') }}" data-md-color-accent="{{ option.accent | replace(' ', '-') }}"{% if option.toggle %} aria-label="{{ option.toggle.name }}"{% endif %} type="radio" name="__palette" id="__palette_{{ loop.index }}">
+              <label class="md-header__button md-icon" title="{{ option.toggle.name }}" for="__palette_{{ loop.index0 if loop.index0 else loop.length }}" hidden>
+                {% include ".icons/" ~ option.toggle.icon ~ ".svg" %}
+              </label>
+            {% endfor %}
+          </form>
+        {% endif %}
+      {% endif %}
+      
+      <!-- GitHub stars button -->
+      <a href="{{ config.repo_url }}" class="github-stats-header" title="Star on GitHub" target="_blank" rel="noopener" id="github-stars-button">
+        <span>Stars</span>
+        <span id="github-star-count">⭐</span>
+      </a>
+    </div>
+  </nav>
+</header>

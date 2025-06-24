@@ -1,0 +1,386 @@
+/* Import Space Mono font for monospace everywhere */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+/* Global monospace font override */
+* {
+  font-family: "Space Mono", monospace !important;
+}
+
+/* Black and grey theme overrides */
+:root {
+  --md-primary-fg-color: #000000;
+  --md-primary-fg-color--light: #333333;
+  --md-primary-fg-color--dark: #000000;
+  --md-accent-fg-color: #666666;
+  --md-accent-fg-color--transparent: rgba(102, 102, 102, 0.1);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #000000;
+  --md-primary-fg-color--light: #333333;
+  --md-primary-fg-color--dark: #000000;
+  --md-accent-fg-color: #999999;
+  --md-accent-fg-color--transparent: rgba(153, 153, 153, 0.1);
+  
+  /* Dark theme background adjustments */
+  --md-default-bg-color: #121212;
+  --md-default-fg-color: #ffffff;
+  --md-code-bg-color: #1e1e1e;
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #000000;
+  --md-accent-fg-color: #666666;
+  
+  /* Light theme adjustments */
+  --md-default-bg-color: #ffffff;
+  --md-default-fg-color: #000000;
+  --md-code-bg-color: #f5f5f5;
+}
+
+/* Remove fixed header - make it scrollable */
+.md-header {
+  position: relative !important;
+  box-shadow: none;
+}
+
+.md-main {
+  margin-top: 0 !important;
+}
+
+/* Header layout adjustments */
+.md-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  max-width: none;
+}
+
+.md-header__title {
+  flex-grow: 0;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Move search and GitHub button to right side of header */
+.md-header__source {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Enhanced code blocks with terminal font */
+.highlight pre,
+.codehilite pre,
+code,
+.md-typeset code {
+  font-family: "Space Mono", "Consolas", "Monaco", "Courier New", monospace !important;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Terminal-style code blocks */
+.highlight {
+  background: #1e1e1e !important;
+  border: 1px solid #333;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.highlight pre {
+  background: #1e1e1e !important;
+  color: #f8f8f2 !important;
+  padding: 1rem;
+  margin: 0;
+  overflow-x: auto;
+}
+
+/* Inline code styling */
+.md-typeset code {
+  background: var(--md-code-bg-color);
+  color: var(--md-accent-fg-color);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-weight: 400;
+}
+
+/* Left sidebar only navigation */
+.md-nav--primary {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--md-default-bg-color);
+  border-right: 1px solid var(--md-default-fg-color--lightest);
+  z-index: 1000;
+}
+
+/* Main content area adjustments */
+.md-main__inner {
+  margin-left: 300px;
+  max-width: none;
+}
+
+.md-content {
+  max-width: none;
+  margin: 0;
+}
+
+/* Edit page button - bottom right */
+.md-content__button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+  background: var(--md-accent-fg-color);
+  color: var(--md-default-bg-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-content__button:hover {
+  background: var(--md-primary-fg-color);
+  color: var(--md-default-bg-color);
+}
+
+/* Footer adjustments */
+.md-footer {
+  margin-left: 300px;
+  background: var(--md-default-bg-color);
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-footer-meta {
+  background: transparent;
+}
+
+/* Custom footer content */
+.md-footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.md-footer__link {
+  color: var(--md-accent-fg-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.md-footer__link:hover {
+  color: var(--md-primary-fg-color);
+  text-decoration: underline;
+}
+
+/* GitHub stars button in header */
+.github-stats-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--md-code-bg-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  text-decoration: none;
+  color: var(--md-default-fg-color);
+  font-size: 0.85rem;
+}
+
+.github-stats-header:hover {
+  background: var(--md-accent-fg-color--transparent);
+}
+
+.github-stats-header::before {
+  content: "⭐";
+  font-size: 0.9rem;
+}
+
+/* Navigation styling */
+.md-nav__title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-nav__item {
+  font-size: 0.9rem;
+}
+
+.md-nav__link {
+  padding: 0.5rem 1rem;
+  border-left: 3px solid transparent;
+}
+
+.md-nav__link--active,
+.md-nav__link:hover {
+  border-left-color: var(--md-accent-fg-color);
+  background: var(--md-accent-fg-color--transparent);
+}
+
+/* Search styling */
+.md-search {
+  margin-right: 1rem;
+}
+
+.md-search__form {
+  background: var(--md-code-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+}
+
+.md-search__input {
+  background: transparent;
+  color: var(--md-default-fg-color);
+  font-family: "Space Mono", monospace !important;
+}
+
+.md-search__input::placeholder {
+  color: var(--md-accent-fg-color);
+}
+
+/* Hero section adjustments for homepage */
+.hero-section {
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #000000 0%, #333333 100%);
+  color: #ffffff;
+  margin: 0;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.hero-section h1 {
+  font-family: "Space Mono", monospace !important;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-family: "Space Mono", monospace !important;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Button styling */
+.md-button {
+  font-family: "Space Mono", monospace !important;
+  background: transparent;
+  border: 2px solid var(--md-accent-fg-color);
+  color: var(--md-accent-fg-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin: 0.3rem;
+}
+
+.md-button:hover {
+  background: var(--md-accent-fg-color);
+  color: var(--md-default-bg-color);
+}
+
+.md-button--primary {
+  background: var(--md-accent-fg-color);
+  color: var(--md-default-bg-color);
+}
+
+.md-button--primary:hover {
+  background: var(--md-primary-fg-color);
+}
+
+/* Table styling */
+table {
+  font-family: "Space Mono", monospace !important;
+  font-size: 0.85rem;
+}
+
+th {
+  background: var(--md-code-bg-color);
+  font-weight: 700;
+}
+
+/* Remove top tabs navigation */
+.md-tabs {
+  display: none !important;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+  .md-nav--primary {
+    width: 250px;
+  }
+  
+  .md-main__inner,
+  .md-footer {
+    margin-left: 250px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .md-nav--primary {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .md-nav--primary.md-nav--open {
+    transform: translateX(0);
+  }
+  
+  .md-main__inner,
+  .md-footer {
+    margin-left: 0;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .md-content__button {
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Mermaid diagram styling */
+.mermaid {
+  font-family: "Space Mono", monospace !important;
+}
+
+/* List styling */
+ul, ol {
+  font-family: "Space Mono", monospace !important;
+}
+
+li {
+  margin-bottom: 0.3rem;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Space Mono", monospace !important;
+  font-weight: 700;
+}
+
+/* Admonitions */
+.md-typeset .admonition {
+  font-family: "Space Mono", monospace !important;
+  border-left: 4px solid var(--md-accent-fg-color);
+  background: var(--md-accent-fg-color--transparent);
+}
+
+.md-typeset .admonition-title {
+  font-weight: 700;
+}
