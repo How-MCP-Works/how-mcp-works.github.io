@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://how-mcp-works.github.io/</loc>
+    <loc>https://howmcpworks.com/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -10,7 +10,7 @@
   
   <!-- Introduction -->
   <url>
-    <loc>https://how-mcp-works.github.io/introduction/</loc>
+    <loc>https://howmcpworks.com/introduction/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -18,37 +18,37 @@
   
   <!-- Concepts -->
   <url>
-    <loc>https://how-mcp-works.github.io/concepts/</loc>
+    <loc>https://howmcpworks.com/concepts/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/concepts/what-is-mcp/</loc>
+    <loc>https://howmcpworks.com/concepts/what-is-mcp/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/concepts/why-it-matters/</loc>
+    <loc>https://howmcpworks.com/concepts/why-it-matters/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/concepts/how-it-works/</loc>
+    <loc>https://howmcpworks.com/concepts/how-it-works/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/concepts/glossary/</loc>
+    <loc>https://howmcpworks.com/concepts/glossary/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/concepts/faq/</loc>
+    <loc>https://howmcpworks.com/concepts/faq/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -56,37 +56,37 @@
   
   <!-- Specification -->
   <url>
-    <loc>https://how-mcp-works.github.io/spec/</loc>
+    <loc>https://howmcpworks.com/spec/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/spec/overview/</loc>
+    <loc>https://howmcpworks.com/spec/overview/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/spec/message-types/</loc>
+    <loc>https://howmcpworks.com/spec/message-types/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/spec/security-model/</loc>
+    <loc>https://howmcpworks.com/spec/security-model/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/spec/revisions/</loc>
+    <loc>https://howmcpworks.com/spec/revisions/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/spec/conformance-tests/</loc>
+    <loc>https://howmcpworks.com/spec/conformance-tests/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -94,43 +94,43 @@
   
   <!-- Implementation -->
   <url>
-    <loc>https://how-mcp-works.github.io/impl/</loc>
+    <loc>https://howmcpworks.com/impl/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/impl/servers/</loc>
+    <loc>https://howmcpworks.com/impl/servers/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/impl/clients/</loc>
+    <loc>https://howmcpworks.com/impl/clients/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/impl/deployment/</loc>
+    <loc>https://howmcpworks.com/impl/deployment/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/impl/security-hardening/</loc>
+    <loc>https://howmcpworks.com/impl/security-hardening/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/impl/observability/</loc>
+    <loc>https://howmcpworks.com/impl/observability/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/impl/performance-tuning/</loc>
+    <loc>https://howmcpworks.com/impl/performance-tuning/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -138,49 +138,49 @@
   
   <!-- Samples & Tutorials -->
   <url>
-    <loc>https://how-mcp-works.github.io/samples/</loc>
+    <loc>https://howmcpworks.com/samples/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/samples/hello-mcp/</loc>
+    <loc>https://howmcpworks.com/samples/hello-mcp/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/samples/security-monitoring/</loc>
+    <loc>https://howmcpworks.com/samples/security-monitoring/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/samples/network-security/</loc>
+    <loc>https://howmcpworks.com/samples/network-security/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/samples/database-connector/</loc>
+    <loc>https://howmcpworks.com/samples/database-connector/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/samples/function-calling/</loc>
+    <loc>https://howmcpworks.com/samples/function-calling/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/samples/streaming-updates/</loc>
+    <loc>https://howmcpworks.com/samples/streaming-updates/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/samples/mobile-integration/</loc>
+    <loc>https://howmcpworks.com/samples/mobile-integration/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -188,31 +188,31 @@
   
   <!-- Use Cases -->
   <url>
-    <loc>https://how-mcp-works.github.io/use-cases/</loc>
+    <loc>https://howmcpworks.com/use-cases/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/use-cases/industry-matrix/</loc>
+    <loc>https://howmcpworks.com/use-cases/industry-matrix/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/use-cases/ott-platform/</loc>
+    <loc>https://howmcpworks.com/use-cases/ott-platform/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/use-cases/ide-assistant/</loc>
+    <loc>https://howmcpworks.com/use-cases/ide-assistant/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/use-cases/case-studies/</loc>
+    <loc>https://howmcpworks.com/use-cases/case-studies/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -220,37 +220,37 @@
   
   <!-- Resources -->
   <url>
-    <loc>https://how-mcp-works.github.io/resources/</loc>
+    <loc>https://howmcpworks.com/resources/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/resources/downloads/</loc>
+    <loc>https://howmcpworks.com/resources/downloads/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/resources/graphics/</loc>
+    <loc>https://howmcpworks.com/resources/graphics/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/resources/references/</loc>
+    <loc>https://howmcpworks.com/resources/references/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/resources/articles/</loc>
+    <loc>https://howmcpworks.com/resources/articles/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://how-mcp-works.github.io/resources/license/</loc>
+    <loc>https://howmcpworks.com/resources/license/</loc>
     <lastmod>2024-06-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
