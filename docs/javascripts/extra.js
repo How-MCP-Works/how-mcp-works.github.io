@@ -314,6 +314,15 @@ function initializePerformanceMonitoring() {
   });
 }
 
+// Version display
+function initializeVersionDisplay() {
+  const versionBadge = document.createElement('div');
+  versionBadge.className = 'version-badge';
+  versionBadge.textContent = 'v1.0.0';
+  versionBadge.title = 'Documentation Version';
+  document.body.appendChild(versionBadge);
+}
+
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   initializeTheme();
@@ -326,6 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeBackToTop();
   initializeTocHighlight();
   initializeCodeEnhancements();
+  initializeVersionDisplay();
   initializePerformanceMonitoring();
 });
 
