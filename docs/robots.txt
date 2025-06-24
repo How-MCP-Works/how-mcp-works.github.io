@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://howmcpworks.com/sitemap.xml
+
+# Prioritize important pages
+User-agent: Googlebot
+Crawl-delay: 1
+
+# SEO-friendly directives
+User-agent: Bingbot
+Crawl-delay: 1
+
+User-agent: *
+Disallow: /assets/
+Disallow: /_*
+Allow: /assets/images/
+Allow: /assets/favicon.ico

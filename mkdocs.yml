@@ -1,0 +1,185 @@
+site_name: How MCP Works
+site_description: Master the Model Context Protocol - A comprehensive guide to building intelligent AI integrations
+site_author: How MCP Works Team
+site_url: https://how-mcp-works.github.io
+repo_url: https://github.com/how-mcp-works/how-mcp-works.github.io
+repo_name: how-mcp-works/how-mcp-works.github.io
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2024 How MCP Works
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.action.edit
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+  font:
+    text: Roboto
+    code: Space Mono
+  favicon: assets/favicon.ico
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+      lang:
+        - en
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: iso_datetime
+      timezone: UTC
+  - macros
+  - tags
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/How-MCP-Works
+      name: How MCP Works on GitHub
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/howmcpworks
+      name: Follow on Twitter
+  analytics:
+    provider: google
+    property: G-L04LK6BDHC
+  generator: false
+
+nav:
+  - Introduction: introduction.md
+  
+  - Concepts:
+    - concepts/index.md
+    - What is MCP: concepts/what-is-mcp.md
+    - Why It Matters: concepts/why-it-matters.md
+    - How It Works: concepts/how-it-works.md
+    - Glossary: concepts/glossary.md
+    - FAQ: concepts/faq.md
+  
+  - Specification:
+    - spec/index.md
+    - Overview: spec/overview.md
+    - Message Types: spec/message-types.md
+    - Security Model: spec/security-model.md
+    - Revisions: spec/revisions.md
+    - Conformance Tests: spec/conformance-tests.md
+  
+  - Implementation:
+    - impl/index.md
+    - Servers: impl/servers.md
+    - Clients: impl/clients.md
+    - Deployment: impl/deployment.md
+    - Security Hardening: impl/security-hardening.md
+    - Observability: impl/observability.md
+    - Performance Tuning: impl/performance-tuning.md
+  
+  - Samples & Tutorials:
+    - samples/index.md
+    - Hello MCP: samples/hello-mcp.md
+    - Security Monitoring: samples/security-monitoring.md
+    - Network Security: samples/network-security.md
+    - Database Connector: samples/database-connector.md
+    - Function Calling: samples/function-calling.md
+    - Streaming Updates: samples/streaming-updates.md
+    - Mobile Integration: samples/mobile-integration.md
+  
+  - Use Cases:
+    - use-cases/index.md
+    - Industry Matrix: use-cases/industry-matrix.md
+    - OTT Platform: use-cases/ott-platform.md
+    - IDE Assistant: use-cases/ide-assistant.md
+    - Case Studies: use-cases/case-studies.md
+  
+  - Resources:
+    - resources/index.md
+    - Downloads: resources/downloads.md
+    - Graphics & Slides: resources/graphics.md
+    - Academic References: resources/references.md
+    - External Articles: resources/articles.md
+    - License: resources/license.md
