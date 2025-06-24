@@ -70,7 +70,6 @@ plugins:
       type: iso_datetime
       timezone: UTC
   - macros
-  - tags
 
 markdown_extensions:
   - abbr
